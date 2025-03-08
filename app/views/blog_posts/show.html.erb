@@ -2,5 +2,5 @@
 <p><%= @blog_post.body %></p>
 
 <% if authenticated? %>
-  <%= button_to "Edit", edit_blog_post_path %> 
+  <%= button_to "Edit", edit_blog_post_path(@blog_post), method: :get %> 
 <% end %>

@@ -1,11 +1,15 @@
-<h1>Blogs</h1>
-<% @blog_posts.each do |blog_post| %>
-  <div>
-    <h2><%= link_to blog_post.title, blog_post  %></h2>
-    <p><%= blog_post.body %></p>
-  </div>
-<% end %>
+<div class="mt-10 grid grid-cols-12 gap-3">
+  <h1 class="col-span-full text-3xl">Blogs</h1>
+  <% @blog_posts.each do |blog_post| %>
+    <div class="col-span-3 bg-gray-500 p-2 rounded-md text-white">
+      <h2><%= link_to blog_post.title, blog_post %></h2>
+      <p><%= blog_post.body %></p>
+    </div>
+  <% end %>
 
-<% if authenticated? %>
-  <%= button_to "New Blog", new_blog_post_path, method: :get %> 
-<% end %>
+  <% if authenticated? %>
+    <div class="col-span-full">
+      <%= button_to "New Blog", new_blog_post_path, method: :get, class: "p-2 rounded-md bg-blue-500 text-white cursor-pointer" %>
+    </div>
+  <% end %>
+</div>
