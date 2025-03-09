@@ -1,15 +1,26 @@
-<div class="mt-10 grid grid-cols-12 gap-3">
-  <h1 class="col-span-full text-3xl">Blogs</h1>
-  <% @blog_posts.each do |blog_post| %>
-    <div class="col-span-3 bg-gray-500 p-2 rounded-md text-white">
-      <h2><%= link_to blog_post.title, blog_post %></h2>
-      <p><%= blog_post.body %></p>
-    </div>
-  <% end %>
+<div class="mt-10 max-w-7xl mx-auto px-4">
+  <h1 class="text-4xl font-semibold text-center mb-8 text-gray-800">Blogs</h1>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <% @blog_posts.each do |blog_post| %>
+      <%= link_to blog_post, class: "bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-all duration-300" do %>
+        <div class="p-4">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4"><%= blog_post.title %></h2>
+          <!-- Blog Post Body (limit preview text) -->
+          <p class="text-gray-600 text-sm line-clamp-3"><%= blog_post.body %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 
+  <!-- New Blog Button (visible only for authenticated users) -->
   <% if authenticated? %>
-    <div class="col-span-full">
-      <%= button_to "New Blog", new_blog_post_path, method: :get, class: "p-2 rounded-md bg-blue-500 text-white cursor-pointer" %>
+    <div class="mt-8 text-center">
+      <%= button_to "New Blog",
+        new_blog_post_path,
+        method: :get,
+        class: "bg-blue-600 text-white py-2 px-6 rounded-full text-lg hover:bg-blue-700 transition-all duration-200" %>
     </div>
   <% end %>
 </div>
+
