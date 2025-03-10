@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@theme {
+    --color-background: #0D0208; /* Deep black-green (hacker terminal vibe) */
+    --color-primary: #00FF41; /* Classic neon green (Matrix code effect) */
+    --color-secondary: #7F8C8D; /* Muted gray-green, like an old CRT monitor */
+    --color-headings: #33FF66; /* Slightly lighter green for contrast */
+    --color-button: #008F11; /* Deep green, hacker UI style */
+    --color-button-secondary: #00CC66; /* Brighter green for hover effects */
+    --color-cards: #001A11; /* Dark teal-green for depth */
+    --color-links: #00FF41; /* Neon green links */
+    --color-borders: #004D26; /* Subtle greenish tint for borders */
+    --color-footers: #050A0A; /* Almost black, but with a hint of green */
+    --color-highlights: #39FF14; /* Bright acid-green for emphasis */
+}
+
+

@@ -1,13 +1,13 @@
 <div class="mt-10 max-w-7xl mx-auto px-4">
-  <h1 class="text-4xl font-semibold text-center mb-8 text-gray-800">Blogs</h1>
+  <h1 class="text-4xl font-semibold text-center mb-8 text-headings">Blogs</h1>
   
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     <% @blog_posts.each do |blog_post| %>
-      <%= link_to blog_post, class: "bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-all duration-300" do %>
+      <%= link_to blog_post, class: "bg-cards shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-all duration-300" do %>
         <div class="p-4">
-          <h2 class="text-2xl font-semibold text-gray-900 mb-4"><%= blog_post.title %></h2>
+          <h2 class="text-2xl font-semibold text-primary mb-4"><%= blog_post.title %></h2>
           <!-- Blog Post Body (limit preview text) -->
-          <p class="text-gray-600 text-sm line-clamp-3"><%= blog_post.body %></p>
+          <p class="text-secondary text-sm line-clamp-3"><%= blog_post.body %></p>
         </div>
       <% end %>
     <% end %>
@@ -19,7 +19,7 @@
       <%= button_to "New Blog",
         new_blog_post_path,
         method: :get,
-        class: "bg-blue-600 text-white py-2 px-6 rounded-full text-lg hover:bg-blue-700 transition-all duration-200" %>
+        class: "bg-button text-background py-2 px-6 rounded-full text-lg hover:bg-blue-700 transition-all duration-200" %>
     </div>
   <% end %>
 </div>
