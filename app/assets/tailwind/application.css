@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./utils";
 
 @theme {
     --color-background: #0D0208; /* Deep black-green (hacker terminal vibe) */
@@ -13,5 +14,4 @@
     --color-footers: #050A0A; /* Almost black, but with a hint of green */
     --color-highlights: #39FF14; /* Bright acid-green for emphasis */
 }
-
 
