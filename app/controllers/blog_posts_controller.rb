@@ -3,7 +3,7 @@ class BlogPostsController < ApplicationController
   allow_unauthenticated_access only: [ :index, :show ]
 
   def index
-    @blog_posts = BlogPost.all
+    @blog_posts = BlogPost.first(6)
   end
 
   def show
