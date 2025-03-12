@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
 
   # Undestading routing
-  root "blog_posts#index"
+  root "pages#home"
   # Routes are processed in order so /new needs to happen before /:id
 
   resources :blog_posts
