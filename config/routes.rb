@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   # Routes are processed in order so /new needs to happen before /:id
 
   resources :blog_posts
+  resources :resume_entries
 end
