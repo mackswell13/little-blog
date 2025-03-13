@@ -13,5 +13,8 @@
     --color-borders: #004D26; /* Subtle greenish tint for borders */
     --color-footers: #050A0A; /* Almost black, but with a hint of green */
     --color-highlights: #39FF14; /* Bright acid-green for emphasis */
+
+
+    --font-lekton: "Lekton", sans-serif;
 }
 

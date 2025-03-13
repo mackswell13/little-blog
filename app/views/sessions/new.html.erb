@@ -1,11 +1,51 @@
-<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
-<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+<div
+  class="
+    bg-cards mt-10 flex flex-col items-center p-8 shadow-lg rounded-lg max-w-md
+    mx-auto
+  "
+>
+  <h1 class="page-heading mb-4">Sign In</h1>
 
-<%= form_with url: session_path do |form| %>
-  <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address] %><br>
-  <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72 %><br>
-  <%= form.submit "Sign in" %>
-<% end %>
-<br>
+  <% if flash[:alert] %>
+    <div class="bg-red-100 text-red-700 p-2 rounded mb-4 w-full text-center">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
 
-<%= link_to "Forgot password?", new_password_path %>
+  <% if flash[:notice] %>
+    <div class="bg-green-100 text-green-700 p-2 rounded mb-4 w-full text-center">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+  <%= form_with url: session_path, class: "w-full" do |form| %>
+    <div class="mb-4">
+      <%= form.label :email_address, class: "block font-medium mb-1 text-secondary" %>
+      <%= form.email_field :email_address,
+                       required: true,
+                       autofocus: true,
+                       autocomplete: "username",
+                       placeholder: "Enter your email address",
+                       value: params[:email_address],
+                       class:
+                         "w-full p-2 border rounded-lg shadow-sm focus:ring focus:ring-blue-200 text-highlights" %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :password, class: "block font-medium mb-1 text-secondary" %>
+      <%= form.password_field :password,
+                          required: true,
+                          autocomplete: "current-password",
+                          placeholder: "Enter your password",
+                          maxlength: 72,
+                          class:
+                            "w-full p-2 border rounded-lg shadow-sm focus:ring focus:ring-blue-200 text-highlights" %>
+    </div>
+
+    <div class="w-full flex justify-center">
+      <%= form.submit "Sign in",
+                  class:
+                    "button" %>
+    </div>
+  <% end %>
+</div>
