@@ -1,0 +1,31 @@
+<div class="max-w-4xl mx-auto mt-10 p-6 bg-cards shadow-lg rounded-lg">
+  <%= form_with model: blog_post, class: "space-y-6" do |form| %>
+    <% if form.object.errors.any? %>
+      <div class="bg-red-100 text-red-700 p-4 rounded-md">
+        <h2 class="font-semibold mb-2">Errors:</h2>
+        <ul class="list-disc list-inside text-sm">
+          <% form.object.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div>
+      <%= form.label :title, class: "block text-secondary font-medium mb-2" %>
+      <%= form.text_field :title, class: "w-full p-3 border border-borders rounded-lg focus:ring focus:ring-highlights focus:border-highlights" %>
+    </div>
+
+    <div>
+      <%= form.label :body, class: "block text-secondary font-medium mb-2" %>
+      <%= form.text_area :body, rows: 6, class: "w-full p-3 border border-borders rounded-lg focus:ring focus:ring-highlights focus:border-highlights" %>
+    </div>
+
+    <div class="text-center">
+      <%= form.button submit,
+        class: "button" %>
+    </div>
+  <% end %>
+</div>
+
+
