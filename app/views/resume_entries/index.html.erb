@@ -1,4 +1,12 @@
 <div class="mt-10">
   <h1 class="page-heading">Resume Entries</h1>
 
+  <% if authenticated? %>
+    <div class="mt-8 text-center">
+      <%= button_to "New Entry",
+        new_resume_entry_path,
+        method: :get,
+        class: "button" %>
+    </div>
+  <% end %>
 </div>

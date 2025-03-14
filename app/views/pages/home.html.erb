@@ -1,4 +1,4 @@
-<div class="grid grid-cols-12 gap-2 mt-10 bg-cards p-8 rounded-4xl">
+<div class="grid grid-cols-12 gap-2 mt-10">
   <div class="overflow-hidden col-span-4 col-start-2">
     <img
       src="/maxsherwin.jpg"
@@ -15,6 +15,18 @@
     <h2 class="text-3xl font-lekton">Software Engineer</h2>
   </div>
 </div>
-<div class="grid-cols-12">
 
+<div class="mt-10">
+  <h2 class="col-span-full page-heading">Blogs</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <% @blog_posts.each do |blog_post| %>
+      <%= link_to blog_post, class: "bg-cards shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-all duration-300" do %>
+        <div class="p-4">
+          <h2 class="text-2xl font-semibold text-primary mb-4"><%= blog_post.title %></h2>
+          <div class="text-secondary text-sm line-clamp-3"><%= render_markdown blog_post.body %></div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
