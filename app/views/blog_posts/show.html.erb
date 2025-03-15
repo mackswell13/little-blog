@@ -2,6 +2,8 @@
   <h1 class="text-4xl font-semibold text-center mb-8 text-headings"><%= @blog_post.title %></h1>
   <div class="mark-down"><%= render_markdown @blog_post.body %></div>
 </div>
-<% if authenticated? %>
-  <%= button_to "Edit", edit_blog_post_path(@blog_post), method: :get %>
-<% end %>
+<div class="flex justify-center">
+  <% if authenticated? %>
+    <%= button_to "Edit", edit_blog_post_path(@blog_post), method: :get, class: "button" %>
+  <% end %>
+</div>

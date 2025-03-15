@@ -22,8 +22,10 @@
     </div>
 
     <div class="text-center">
-      <%= form.button submit,
-        class: "button" %>
+      <%= form.button submit, class: "button w-[200px]" %>
+      <% if authenticated? %>
+        <%= button_to "Delete", @blog_post, method: :delete, class: "button w-[200px]" %>
+      <% end  %>
     </div>
   <% end %>
 </div>
