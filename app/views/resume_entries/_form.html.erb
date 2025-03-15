@@ -13,16 +13,16 @@
 
     <div>
       <%= form.label :title, class: "block text-secondary font-medium mb-2" %>
-      <%= form.text_field :title, class: "w-full p-3 border border-borders rounded-lg focus:ring focus:ring-highlights focus:border-highlights" %>
+      <%= form.text_field :title, class: "text-primary w-full p-3 border border-borders rounded-lg focus:ring focus:ring-highlights focus:border-highlights" %>
     </div>
 
     <div class="flex space-x-4">
-      <div class="w-1/2">
+      <div class="w-1/2 text-primary">
         <%= form.label :start_date, class: "block text-secondary font-medium mb-2" %>
-        <%= form.date_select :start_date, class: "w-full p-3 primary" %>
+        <%= form.date_select :start_date, class: "w-full p-3" %>
       </div>
 
-      <div class="w-1/2">
+      <div class="w-1/2 text-primary">
         <%= form.label :end_date, class: "block text-secondary font-medium mb-2" %>
         <%= form.date_select :end_date, class: "w-full p-3" %>
       </div>
@@ -30,7 +30,7 @@
 
     <div>
       <%= form.label :bullets, class: "block text-secondary font-medium mb-2" %>
-      <%= form.text_area :bullets, rows: 6, class: "w-full p-3 border border-borders rounded-lg focus:ring focus:ring-highlights focus:border-highlights" %>
+      <%= form.text_area :bullets, rows: 6, class: "text-primary w-full p-3 border border-borders rounded-lg focus:ring focus:ring-highlights focus:border-highlights" %>
     </div>
 
     <div class="text-center">
