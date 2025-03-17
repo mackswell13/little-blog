@@ -13,20 +13,22 @@
 
     <div>
       <%= form.label :title, class: "block text-secondary font-medium mb-2" %>
-      <%= form.text_field :title, class: "w-full p-3 border border-borders rounded-lg focus:ring focus:ring-highlights focus:border-highlights" %>
+      <%= form.text_field :title, class: "w-full p-3 border border-borders rounded-lg focus:ring focus:ring-highlights focus:border-highlights text-primary" %>
     </div>
 
     <div>
       <%= form.label :body, class: "block text-secondary font-medium mb-2" %>
-      <%= form.text_area :body, rows: 6, class: "w-full p-3 border border-borders rounded-lg focus:ring focus:ring-highlights focus:border-highlights" %>
+      <%= form.text_area :body, rows: 6, class: "w-full p-3 border border-borders rounded-lg focus:ring focus:ring-highlights focus:border-highlights text-primary" %>
     </div>
 
     <div class="text-center">
       <%= form.button submit, class: "button w-[200px]" %>
-      <% if authenticated? %>
-        <%= button_to "Delete", @blog_post, method: :delete, class: "button w-[200px]" %>
-      <% end  %>
     </div>
   <% end %>
+  <% if authenticated? %>
+    <div class="justify-center flex mt-4">
+      <%= button_to "Delete", @blog_post, method: :delete, class: "button w-[200px]" %>
+    </div>
+  <% end  %>
 </div>
 

@@ -19,7 +19,7 @@
 <div class="mt-10">
   <h2 class="col-span-full page-heading mb-8">Blogs</h2>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-4">
     <% @blog_posts.each do |blog_post| %>
       <%= link_to blog_post, class: "bg-cards shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-all duration-300" do %>
         <div class="p-4">
